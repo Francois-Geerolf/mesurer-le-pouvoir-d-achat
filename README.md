@@ -12,8 +12,8 @@ Le dépôt contient de quoi répliquer les figures et les données du [document 
 
 ![FigureA1](figure1.png)
 
-### Figure A1 : Poids de l’enseignement dans l’IPC et dans l’IPCH.
+### Figure 2: IPC, IPCH et déflateur de la consommation dans la santé
 
-[Code R](figureA1.R)
+[Code R](figure2.R)
 
-![FigureA1](figureA1.png)
+![FigureA1](figure2.png)
