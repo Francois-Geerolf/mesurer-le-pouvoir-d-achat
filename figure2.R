@@ -45,7 +45,7 @@ figure2 %>%
   geom_line(aes(x = date, y = OBS_VALUE, color = variable)) +
   scale_x_date(breaks = seq(1996, 2100, 4) %>% paste0("-01-01") %>% as.Date,
                labels = date_format("%Y")) +
-  theme(legend.position = c(0.2, 0.85),
+  theme(legend.position = c(0.15, 0.85),
         legend.title = element_blank()) +
   scale_y_log10(breaks = seq(0, 500, 5),
                 labels = dollar_format(accuracy = 1, prefix = ""))
