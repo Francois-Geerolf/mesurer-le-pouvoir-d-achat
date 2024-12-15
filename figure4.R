@@ -2,12 +2,10 @@ library(tidyverse)
 library(readxl)
 
 # IPC et IPCH --------
-# 001764888: Indice annuel des prix à la consommation - Base 2015 - Ensemble des ménages - France - Nomenclature Coicop : 08 - Communications
-# 001763313: Indice des prix à la consommation harmonisé annuel - Base 2015 - Ensemble des ménages - France - Nomenclature Coicop : 08 - Communications
 
-figure2_idbanks <- c("001764888", "001763313")
+figure1_idbanks <- c("001764780", "001763105")
 
-IPC_IPCH <- paste(figure2_idbanks, collapse = "+") |>
+IPC_IPCH <- paste(figure1_idbanks, collapse = "+") |>
   paste0("https://www.bdm.insee.fr/series/sdmx/data/SERIES_BDM/", i = _) |>
   rsdmx::readSDMX() |>
   tibble::as_tibble() |>
@@ -27,7 +25,7 @@ deflateur <- read_excel(temp, skip = 3, sheet = "IPRIX2020") %>%
   rename(fonction = ...1, variable = ...2) %>%
   gather(year, OBS_VALUE, -fonction, -variable) %>%
   filter(!is.na(OBS_VALUE),
-         fonction %in% c("CP08")) %>%
+         fonction %in% c("CP06")) %>%
   transmute(date = as.Date(paste0(year, "-01-01")),
             OBS_VALUE,
             variable = "Déflateur de la Consommation")
@@ -35,24 +33,24 @@ deflateur <- read_excel(temp, skip = 3, sheet = "IPRIX2020") %>%
 
 # Figure 4 ----------
 
-figure2 <- deflateur %>%
+figure4 <- deflateur %>%
   bind_rows(IPC_IPCH) %>%
   filter(date >= as.Date("1996-01-01")) %>%
   group_by(variable) %>%
   arrange(date) %>%
   mutate(OBS_VALUE = 100*OBS_VALUE/OBS_VALUE[1])
 
-figure2 %>%
+figure4 %>%
   ggplot() + ylab("") + xlab("") + theme_minimal() +
   geom_line(aes(x = date, y = OBS_VALUE, color = variable)) +
-  
-  scale_x_date(breaks = seq(1996, 2100, 2) %>% paste0("-01-01") %>% as.Date,
-               labels = date_format("%Y")) +
-  theme(legend.position = c(0.3, 0.3),
+  scale_x_date(breaks = seq(1996, 2100, 4) %>% paste0("-01-01") %>% as.Date,
+               labels = scales::date_format("%Y")) +
+  theme(legend.position = c(0.25, 0.85),
         legend.title = element_blank()) +
-  scale_y_log10(breaks = seq(0, 500, 10),
-                labels = dollar_format(accuracy = 1, prefix = ""))
+  scale_y_log10(breaks = seq(0, 500, 5),
+                labels = scales::dollar_format(accuracy = 1, prefix = ""))
 
-ggsave("figure2.png", width = 1.25*6, height = 1.25*3.375, bg = "white", dpi = 150)
-ggsave("figure2.pdf", width = 1.25*6, height = 1.25*3.375, dpi = 150)
+ggsave("figure4.png", width = 1.25*6, height = 1.25*3.375, bg = "white", dpi = 150)
+ggsave("figure4.pdf", width = 1.25*6, height = 1.25*3.375, dpi = 150)
+
 
