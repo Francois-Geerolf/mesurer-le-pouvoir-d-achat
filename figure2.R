@@ -51,7 +51,8 @@ figure2 %>%
   theme(legend.position = c(0.3, 0.3),
         legend.title = element_blank()) +
   scale_y_log10(breaks = seq(0, 500, 10),
-                labels = dollar_format(accuracy = 1, prefix = ""))
+                labels = dollar_format(accuracy = 1, prefix = "")) +
+  labs(caption = "Source: Insee, calculs de l'auteur")
 
 ggsave("figure2.png", width = 1.25*6, height = 1.25*3.375, bg = "white", dpi = 150)
 ggsave("figure2.pdf", width = 1.25*6, height = 1.25*3.375, dpi = 150)

@@ -34,7 +34,8 @@ figure9 |>
                mutate(image = paste0("flags/", str_to_lower(gsub(" ", "-", Geo)), ".png")),
              aes(x = date, y = obsValue, image = image), asp = 1.5) +
   theme(legend.position = "none") +
-  geom_hline(yintercept = 100, linetype = "dashed")
+  geom_hline(yintercept = 100, linetype = "dashed") +
+  labs(caption = "Source: Eurostat, calculs de l'auteur")
 
 
 ggsave("figure9.png", width = 1.25*6, height = 1.25*3.375, bg = "white", dpi = 150)

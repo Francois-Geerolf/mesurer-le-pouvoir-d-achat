@@ -21,7 +21,7 @@ figure7 %>%
   left_join(colors, by = c("Geo" = "country")) %>%
   ggplot + geom_line(aes(x = date, y = obsValue, color = color)) +
   theme_minimal()  +
-  geom_image(data = . %>%
+  ggimage::geom_image(data = . %>%
                group_by(date) %>%
                filter(n() == 5) %>%
                arrange(obsValue) %>%
@@ -33,10 +33,11 @@ figure7 %>%
              aes(x = date, y = obsValue, image = image), asp = 1.5) +
   scale_color_identity() + xlab("") + ylab("") +
   scale_x_date(breaks = as.Date(paste0(seq(1999, 2030, 2), "-01-01")),
-               labels = date_format("%Y")) +
+               labels = scales::date_format("%Y")) +
   theme(legend.position = c(0.2, 0.85),
         legend.title = element_blank()) +
-  scale_y_log10(breaks = seq(10, 300, 10))
+  scale_y_log10(breaks = seq(10, 300, 10)) +
+  labs(caption = "Source: Eurostat, calculs de l'auteur")
 
 
 ggsave("figure7.png", width = 1.25*6, height = 1.25*3.375, bg = "white", dpi = 150)

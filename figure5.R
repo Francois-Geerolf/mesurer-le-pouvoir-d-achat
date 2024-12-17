@@ -24,7 +24,7 @@ figure5 |>
                labels = date_format("%Y")) +
   scale_y_log10(breaks = seq(0, 200, 5)) +
   scale_color_identity() +
-  geom_image(data = . %>%
+  ggimage::geom_image(data = . %>%
                group_by(date) %>%
                filter(n() == 5) %>%
                arrange(obsValue) %>%
@@ -34,7 +34,8 @@ figure5 |>
                head(5) %>%
                mutate(image = paste0("flags/", str_to_lower(gsub(" ", "-", Geo)), ".png")),
              aes(x = date, y = obsValue, image = image), asp = 1.5) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  labs(caption = "Source: Eurostat, calculs de l'auteur")
 
 
 ggsave("figure5.png", width = 1.25*6, height = 1.25*3.375, bg = "white", dpi = 150)

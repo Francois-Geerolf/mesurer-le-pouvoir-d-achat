@@ -58,7 +58,8 @@ t_pib_vol %>%
                labels = date_format("%Y")) +
   scale_y_log10(breaks = seq(0, 1000, 10)) +
   geom_label(data = . %>% filter(date == max(date)),
-             aes(x = date, y = deflateur, color = Variable, label = round(deflateur, 1)))
+             aes(x = date, y = deflateur, color = Variable, label = round(deflateur, 1))) +
+  labs(caption = "Source: Insee, calculs de l'auteur")
 
 ggsave("figure1.png", width = 1.25*6, height = 1.25*3.375, bg = "white", dpi = 150)
 ggsave("figure1.pdf", width = 1.25*6, height = 1.25*3.375, dpi = 150)
