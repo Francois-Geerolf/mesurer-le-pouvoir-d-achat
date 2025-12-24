@@ -2,6 +2,17 @@
 
 Ce dépôt met à disposition des codes de réplication pour le [document de travail en lien](https://fgeerolf.com/mesurer-le-pouvoir-d-achat.html).
 
+<p align="center">
+
+  <!-- Reader Navigation -->
+  **[📖 Lire en ligne](https://fgeerolf.com/mesurer-le-pouvoir-d-achat.html)** •
+  **[📄 Version PDF](https://fgeerolf.com/mesurer-le-pouvoir-d-achat.pdf)** •
+  **[🌐 Présentation HTML](https://fgeerolf.com/mesurer-le-pouvoir-d-achat-handouts.html)**•
+  **[📓 Présentation PDF](https://fgeerolf.com/mesurer-le-pouvoir-d-achat-slides.pdf)** 
+
+</p>
+
+
 ## Réplication
 
 Le dépôt contient de quoi répliquer les figures et les données du [document de travail en lien](https://fgeerolf.com/mesurer-le-pouvoir-d-achat.html):
