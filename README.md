@@ -22,49 +22,49 @@ Le dépôt contient de quoi répliquer les figures et les données du [document 
 
 ### Figure 1: Déflateur de la consommation et de l’investissement des ménages, Base 100 = 1999
 
-[Code R](figure1.R)
+[Code R](R/figure1.R)
 
-![Figure 1](figure1.png)
+![Figure 1](png/figure1.png)
 
 ### Figure 2: Déflateur de la consommation vs. IPCH et IPC, COICOP 08 - Communications, Base 100 = 1996
 
-[Code R](figure2.R)
+[Code R](R/figure2.R)
 
-![Figure 2](figure2.png)
+![Figure 2](png/figure2.png)
 
 ### Figure 3: Déflateur de la consommation pour le COICOP 08, Base 100 = 1995
 
-[Code R](figure3.R)
+[Code R](R/figure3.R)
 
-![Figure 3](figure3.png)
+![Figure 3](png/figure3.png)
 
 ### Figure 4: Déflateur vs. IPCH et IPC pour la santé (COICOP 06), Base 100 = 1996
 
-[Code R](figure4.R)
+[Code R](R/figure4.R)
 
-![Figure 4](figure4.png)
+![Figure 4](png/figure4.png)
 
 ### Figure 5: IPCH pour la communication (COICOP 08), Base 100 = 1996
 
-[Code R](figure5.R)
+[Code R](R/figure5.R)
 
-![Figure 5](figure5.png)
+![Figure 5](png/figure5.png)
 
 ### Figure 6: Revenu disponible brut par habitant, nominal (en €), Base 100 = 1999
 
-[Code R](figure6.R)
+[Code R](R/figure6.R)
 
-![Figure 6](figure6.png)
+![Figure 6](png/figure6.png)
 
 ### Figure 7: Déflateur de la consommation, Base 100 = 1999
 
-[Code R](figure7.R)
+[Code R](R/figure7.R)
 
-![Figure 7](figure7.png)
+![Figure 7](png/figure7.png)
 
 ### Figure 9: Revenu disponible brut par habitant déflaté par le « déflateur de la consommation », Base 100 = 1999
 
-[Code R](figure9.R)
+[Code R](R/figure9.R)
 
-![Figure 9](figure9.png)
+![Figure 9](png/figure9.png)
 
