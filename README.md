@@ -1,5 +1,9 @@
 # Mesurer le pouvoir d'achat
 
+Date de publication: 9 juillet 2024.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22982442.svg)](https://doi.org/10.5281/zenodo.22982442)
+
 Ce dépôt met à disposition des codes de réplication pour le [document de travail en lien](https://fgeerolf.com/mesurer-le-pouvoir-d-achat.html).
 
 <p align="center">
@@ -11,7 +15,6 @@ Ce dépôt met à disposition des codes de réplication pour le [document de tra
   **[📓 Présentation PDF](https://fgeerolf.com/mesurer-le-pouvoir-d-achat-slides.pdf)** 
 
 </p>
-
 
 ## Réplication
 
